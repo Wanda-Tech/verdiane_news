@@ -1,6 +1,0 @@
-﻿namespace NewsWebsite
-{
-    public class Steps_to_push_to_push_a_code_on_github
-    {
-    }
-}
