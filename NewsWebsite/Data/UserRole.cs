@@ -1,8 +1,7 @@
-﻿using NewsWebsite.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewsWebsite.Models
+namespace NewsWebsite.Data
 {
     // Junction Table: Implements many-to-many relationship between Users and Roles
     // This allows one user to have multiple roles, and one role to be assigned to multiple users

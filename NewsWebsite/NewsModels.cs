@@ -1,6 +1,6 @@
 ﻿namespace NewsWebsite
 {
-    public class Models
+    public class NewsModels
     {
     }
 }

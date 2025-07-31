@@ -1,0 +1,19 @@
+﻿
+using AutoMapper;
+using NewsWebsite.Data;
+using NewWebsite.Extension;
+using NewWebsite.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace NewWebsite.Mapper;
+public class NewsProfile : Profile
+{ 
+    public NewsProfile()
+    {
+        CreateMap<News, SimpleNews>()
+            .ForMember(dest => dest.IsPublished, opt => opt.MapFrom(src => src.NewsStatus == NewsStatus.Published))
+            .ForMember(dest => dest.NewsCategory,opt => opt.MapFrom(src => src.NewsCategory.Name))
+            .ForMember(dest => dest.CreatedDateString, opt => opt.MapFrom(src => src.CreatedDate.ToLocalTime().ToString("MMMM dd, HH:mm:ss tt zz") + " " + src.CreatedDate.ToHumanAgoString()));
+    }
+}
+

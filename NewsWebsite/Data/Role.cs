@@ -1,8 +1,7 @@
-﻿using NewsWebsite.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewsWebsite.Models
+namespace NewsWebsite.Data
 {
     public class Role
     {
@@ -15,13 +14,13 @@ namespace NewsWebsite.Models
         [Required(ErrorMessage = "Role name is required")]
         [StringLength(100, ErrorMessage = "Role name cannot exceed 100 characters")]
         [Column("name")]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         // Role description - maximum 150 characters, cannot be null
         [Required(ErrorMessage = "Description is required")]
         [StringLength(150, ErrorMessage = "Description cannot exceed 150 characters")]
         [Column("description")]
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         // Navigation Property: All users assigned to this role (many-to-many relationship)
         public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
